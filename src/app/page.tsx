@@ -6,6 +6,7 @@ import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
+import { icons } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
 
@@ -49,10 +50,10 @@ export default function Page() {
           </Markdown>
         </BlurFade>
       </section>
-      <section id='work'>
+      {/* <section id='work'>
         <div className='flex min-h-0 flex-col gap-y-3'>
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
-            <h2 className='text-xl font-bold'>Work Experience</h2>
+            <h2 className='text-xl font-bold'>Project works</h2>
           </BlurFade>
           {DATA.work.map((work, id) => (
             <BlurFade
@@ -67,36 +68,17 @@ export default function Page() {
                 subtitle={work.title}
                 href={work.href}
                 badges={work.badges}
-                period={`${work.start} - ${work.end ?? "Present"}`}
+                period={
+                  work.singleDate
+                    ? work.start
+                    : `${work.start} - ${work.end ?? "Present"}`
+                }
                 description={work.description}
               />
             </BlurFade>
           ))}
         </div>
-      </section>
-      <section id='education'>
-        <div className='flex min-h-0 flex-col gap-y-3'>
-          <BlurFade delay={BLUR_FADE_DELAY * 7}>
-            <h2 className='text-xl font-bold'>Education</h2>
-          </BlurFade>
-          {DATA.education.map((education, id) => (
-            <BlurFade
-              key={education.school}
-              delay={BLUR_FADE_DELAY * 8 + id * 0.05}
-            >
-              <ResumeCard
-                key={education.school}
-                href={education.href}
-                logoUrl={education.logoUrl}
-                altText={education.school}
-                title={education.school}
-                subtitle={education.degree}
-                period={`${education.start} - ${education.end}`}
-              />
-            </BlurFade>
-          ))}
-        </div>
-      </section>
+      </section> */}
       <section id='skills'>
         <div className='flex min-h-0 flex-col gap-y-3'>
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
@@ -111,6 +93,7 @@ export default function Page() {
           </div>
         </div>
       </section>
+
       <section id='projects'>
         <div className='space-y-12 w-full py-12'>
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
@@ -152,7 +135,30 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section id='hackathons'>
+      <section id='education'>
+        <div className='flex min-h-0 flex-col gap-y-3'>
+          <BlurFade delay={BLUR_FADE_DELAY * 7}>
+            <h2 className='text-xl font-bold'>Education</h2>
+          </BlurFade>
+          {DATA.education.map((education, id) => (
+            <BlurFade
+              key={education.school}
+              delay={BLUR_FADE_DELAY * 8 + id * 0.05}
+            >
+              <ResumeCard
+                key={education.school}
+                href={education.href}
+                logoUrl={education.logoUrl}
+                altText={education.school}
+                title={education.school}
+                subtitle={education.degree}
+                period={`${education.start} - ${education.end}`}
+              />
+            </BlurFade>
+          ))}
+        </div>
+      </section>
+      {/* <section id='hackathons'>
         <div className='space-y-12 w-full py-12'>
           <BlurFade delay={BLUR_FADE_DELAY * 13}>
             <div className='flex flex-col items-center justify-center space-y-4 text-center'>
@@ -194,7 +200,7 @@ export default function Page() {
             </ul>
           </BlurFade>
         </div>
-      </section>
+      </section> */}
       <section id='contact'>
         <div className='grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12'>
           <BlurFade delay={BLUR_FADE_DELAY * 16}>
@@ -206,15 +212,13 @@ export default function Page() {
                 Get in Touch
               </h2>
               <p className='mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed'>
-                Want to chat? Just shoot me a dm{" "}
+                Want to chat? Drop me a text on{" "}
                 <Link
                   href={DATA.contact.social.X.url}
                   className='text-blue-500 hover:underline'
                 >
-                  with a direct question on twitter
-                </Link>{" "}
-                and I&apos;ll respond whenever I can. I will ignore all
-                soliciting.
+                  𝕏
+                </Link>
               </p>
             </div>
           </BlurFade>
