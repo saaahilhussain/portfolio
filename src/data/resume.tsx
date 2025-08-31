@@ -7,9 +7,9 @@ export const DATA = {
   // url: "nil",
   location: "Guwahati, Assam, India",
   locationLink: "https://www.google.com/maps/place/Guwahati",
-  description: "Full-stack web developer. \nDevOps enthusiast.",
+  description: "Full-stack web developer. \nDevOps & GenAI enthusiast.",
   summary:
-    "Passionately diving into full-stack web development and exploring the exciting world of DevOps. I love building meaningful projects, experimenting with code, and documenting my learning journey on GitHub to inspire and help others in the community. When I'm not coding, you’ll find me working out, strumming my guitar, or writing to express my thoughts.",
+    "Hey there, I'm Sahil Hussain. I've been passionately diving into full-stack web development and exploring the exciting world of DevOps. I love building meaningful projects, experimenting with code, and documenting my learning journey on GitHub to inspire and help others in the community. Down the road I aspire to integrate GenAI into my projects & workflows. When I'm not coding, you’ll find me working out, strumming my guitar, or writing to express my thoughts.",
   avatarUrl: "/me.png",
   skills: [
     "TypeScript",

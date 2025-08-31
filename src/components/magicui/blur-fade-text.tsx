@@ -35,14 +35,14 @@ const BlurFadeText = ({
 
   if (animateByCharacter) {
     return (
-      <div className="flex">
+      <div className='flex'>
         <AnimatePresence>
           {characters.map((char, i) => (
             <motion.span
               key={i}
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
+              initial='hidden'
+              animate='visible'
+              exit='hidden'
               variants={combinedVariants}
               transition={{
                 yoyo: Infinity,
@@ -61,12 +61,12 @@ const BlurFadeText = ({
   }
 
   return (
-    <div className="flex">
+    <div className='flex'>
       <AnimatePresence>
         <motion.span
-          initial="hidden"
-          animate="visible"
-          exit="hidden"
+          initial='hidden'
+          animate='visible'
+          exit='hidden'
           variants={combinedVariants}
           transition={{
             yoyo: Infinity,
